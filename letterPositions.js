@@ -14,7 +14,7 @@ const eqArrays = function(a, b) {
 const assertArraysEqual = function(a, b) {
   if (eqArrays(a,b) === true) {
     console.log(`✅✅✅ Assertion Passed: ${a} === ${b}`);
-  }else{
+  } else {
     console.log(`🛑🛑🛑 Assertion Failed: ${a} !== ${b}`);
   }
 };
@@ -23,7 +23,7 @@ const letterPositions = function(string) {
   const results = {};
   for (let i = 0; i < string.length; i++) {
     if (string[i] !== " ") {
-      results[string[i]] = (results[string[i]] || [])
+      results[string[i]] = (results[string[i]] || []);
       results[string[i]].push(i);
     }
   }

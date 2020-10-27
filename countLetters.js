@@ -6,15 +6,13 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const countLetters = function(string){
-  res = {};
+const countLetters = function(string) {
+  let res = {};
   for (const letter in string) {
-    console.log(string[letter]);
     if (string[letter] !== " ") {
       res[string[letter]] = (res[string[letter]] + 1 || 1);
     }
   }
-  console.log(res);
   return res;
 };
 const test = "a bb ccc g";

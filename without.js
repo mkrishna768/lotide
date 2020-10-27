@@ -13,10 +13,11 @@ const eqArrays = function(a, b) {
 const assertArraysEqual = function(a, b) {
   if (eqArrays(a,b) === true) {
     console.log(`✅✅✅ Assertion Passed: ${a} === ${b}`);
-  }else{
+  } else {
     console.log(`🛑🛑🛑 Assertion Failed: ${a} !== ${b}`);
   }
-}
+};
+
 const without = function(source, remove) {
   let res = [];
   for (let i = 0; i < source.length; i++) {
@@ -26,11 +27,12 @@ const without = function(source, remove) {
     }
   }
   return res;
-}
-assertArraysEqual(without([1, 2, 3], [1]), [2, 3])
-assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"])
+};
+
+assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
+assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
 assertArraysEqual(without([1, 2, 3], []), [1, 2, 3]);
-assertArraysEqual(without([], [1]), [])
+assertArraysEqual(without([], [1]), []);
 let test = [1, 2, 3];
 without(test, [1]);
-assertArraysEqual(test, [1, 2, 3])
+assertArraysEqual(test, [1, 2, 3]);

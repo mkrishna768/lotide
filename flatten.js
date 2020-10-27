@@ -13,22 +13,24 @@ const eqArrays = function(a, b) {
 const assertArraysEqual = function(a, b) {
   if (eqArrays(a,b) === true) {
     console.log(`✅✅✅ Assertion Passed: ${a} === ${b}`);
-  }else{
+  } else {
     console.log(`🛑🛑🛑 Assertion Failed: ${a} !== ${b}`);
   }
-}
-const flatten = function(array){
+};
+
+const flatten = function(array) {
   let ret = [];
   for (let i = 0; i < array.length; i++) {
     const element = array[i];
     if (Array.isArray(element)) {
       ret = ret.concat(element);
-    }else {
+    } else {
       ret.push(element);
     }
   }
   return ret;
-}
+};
+
 assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
 
 assertArraysEqual(flatten([1, 2, [3, 4], 5, []]), [1, 2, 3, 4, 5]);
