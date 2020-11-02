@@ -1,0 +1,10 @@
+const assertEqual = require('../assertEqual');
+const countLetters = require('../countLetters');
+const test = "a bb ccc g";
+const result = countLetters(test);
+assertEqual(result["a"], 1);
+assertEqual(result["b"], 2);
+assertEqual(result["c"], 3);
+assertEqual(result["d"], undefined);
+assertEqual(result["g"] , 1);
+assertEqual(result[" "], undefined);
