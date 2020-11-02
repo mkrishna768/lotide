@@ -1,13 +1,22 @@
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const tail = require('../tail');
 
-const testArray = ["a", "b", "c"];
-const resA = tail(testArray);
-assertEqual(resA.length, 2);
-assertEqual(resA[0], "b");
-assertEqual(resA[1], "c");
-assertEqual(testArray.length, 3);
-const resB = tail(["a"]);
-assertEqual(resB.length, 0);
-const resC = tail([]);
-assertEqual(resC.length, 0);
+describe('#tail', () => {
+  it("returns length of 2 for tail([1, 2, 3])", () => {
+    assert.strictEqual(tail([1, 2, 3]).length, 2);
+  });
+  it("returns correct value", () => {
+    assert.deepEqual(tail(["a", "b", "c"]), ["b", "c"]);
+  });
+  it("Original array not modded", () => {
+    const testArr = [1, 2, 3];
+    tail(testArr);
+    assert.deepEqual(testArr, [1, 2, 3]);
+  });
+  it("returns empty array for single item array", () => {
+    assert.deepEqual(tail([1]), []);
+  });
+  it("returns empty array for empty array", () => {
+    assert.deepEqual(tail([]), []);
+  });
+});
