@@ -1,9 +1,13 @@
 const map = require('../map');
-const assertArraysEqual = require('../assertArraysEqual');
+const assert = require('chai').assert;
 
-const words = ["ground", "control", "to", "major", "tom"];
+describe("#map", () => {
+  it("returns correctly for all tests", () => {
+    const words = ["ground", "control", "to", "major", "tom"];
+    const results1 = map(words, word => word[0]);
+    assert.deepEqual(results1, ["g", "c", "t", "m", "t"]);
+    assert.deepEqual(map([1, 2, 3], x => x * 2), [2, 4, 6]);
+    assert.deepEqual(map([], x => x * 3), []);
+  });
+});
 
-const results1 = map(words, word => word[0]);
-assertArraysEqual(results1, ["g", "c", "t", "m", "t"]);
-assertArraysEqual(map([1, 2, 3], x => x * 2), [2, 4, 6]);
-assertArraysEqual(map([], x => x * 3), []);
